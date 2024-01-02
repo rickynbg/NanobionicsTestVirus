@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NanobionicsTestVirusDesktop", "NanobionicsTestVirusDesktop\NanobionicsTestVirusDesktop.csproj", "{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NanobionicsTestVirusLibrary", "NanobionicsTestVirusLibrary\NanobionicsTestVirusLibrary.csproj", "{704F2C23-C051-4404-A64E-C7F33FC93BFB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NanobionicsInstaller", "NanobionicsTestVirusInstaller\NanobionicsTestVirusInstaller.vdproj", "{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Debug|x64.ActiveCfg = Debug|x64
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Debug|x64.Build.0 = Debug|x64
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Release|x64.ActiveCfg = Release|x64
+		{4EBFFDFD-38AB-4E12-878E-89537B0CE22B}.Release|x64.Build.0 = Release|x64
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Debug|x64.Build.0 = Debug|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Release|x64.ActiveCfg = Release|Any CPU
+		{704F2C23-C051-4404-A64E-C7F33FC93BFB}.Release|x64.Build.0 = Release|Any CPU
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Debug|Any CPU.ActiveCfg = Debug
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Debug|Any CPU.Build.0 = Debug
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Debug|x64.ActiveCfg = Debug
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Debug|x64.Build.0 = Debug
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Release|Any CPU.ActiveCfg = Release
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Release|Any CPU.Build.0 = Release
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Release|x64.ActiveCfg = Release
+		{36AE568F-7FB9-4C5F-9C5B-6F08A64394E0}.Release|x64.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {042B1726-6BE3-4580-B317-6E6B9F06CA00}
+	EndGlobalSection
+EndGlobal

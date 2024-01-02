@@ -1,0 +1,195 @@
+﻿<UserControl x:Class="NanobionicsTestVirusDesktop.Views.AnalysisControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NanobionicsTestVirusDesktop.Views"
+             xmlns:MD="clr-namespace:NanobionicsTestVirusDesktop.Models"
+             xmlns:VM="clr-namespace:NanobionicsTestVirusDesktop.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=VM:MainViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="410" d:DesignWidth="520">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel 
+            Grid.Row="0" 
+            Margin="15"
+            Background="{StaticResource DefaultPanelBackgroundAlternateLightBrush}">
+            <StackPanel Orientation="Horizontal" Margin="20 0">
+                <TextBlock 
+                    Text="{Binding Ms.SelectedItem.Name}" 
+                    Foreground="{StaticResource DefaultTextBrushDark}" 
+                    Margin="0 5 5 5" 
+                    FontSize="32" 
+                    FontWeight="DemiBold"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5 20 5">
+                <TextBlock 
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM1.Name, StringFormat=Measure: {0} |}"/>
+                <TextBlock 
+                    Margin="4 0"
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM1.PointsCount, StringFormat= Points: {0} |}"/>
+                <TextBlock 
+                    Margin="4 0"
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM1.FrequencyValue, StringFormat= Frequency: {0} Hz |}"/>
+                <TextBlock 
+                    Margin="4 0"
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM1.FrequencyPos, StringFormat= Position: {0}}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 0">
+                <TextBlock 
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM2.Name, StringFormat=Measure: {0} |}"/>
+                <TextBlock 
+                    Margin="4 0"
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM2.PointsCount, StringFormat= Points: {0} |}"/>
+                <TextBlock 
+                    Margin="4 0"
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM2.FrequencyValue, StringFormat= Frequency: {0} Hz |}"/>
+                <TextBlock 
+                    Margin="4 0"
+                    Foreground="{StaticResource DefaultTextBrushMedium}" 
+                    Text="{Binding Ms.DM2.FrequencyPos, StringFormat= Position: {0}}"/>
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.21*"/>
+                    <ColumnDefinition Width="0.21*"/>
+                    <ColumnDefinition Width="0.29*"/>
+                    <ColumnDefinition Width="0.*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock 
+                        Margin="0 20"
+                        FontSize="14"
+                        Foreground="{StaticResource DefaultTextBrushMedium}" 
+                        Text="MaxCutOff: "
+                        Visibility="{Binding Ms.VisibilityCtrl}"/>
+                    <TextBlock 
+                        Margin="0 18"
+                        FontSize="16"
+                        Foreground="{StaticResource DefaultTextBrushDark}" 
+                        Text="{Binding Ms.SelectedItem.CutOffMax}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock 
+                            Margin="0 20"
+                            FontSize="14"
+                            Foreground="{StaticResource DefaultTextBrushMedium}" 
+                            Text="MinCutOff: "
+                            Visibility="{Binding Ms.VisibilityCtrl}"/>
+                    <TextBlock 
+                            Margin="0 18"
+                            FontSize="16"
+                            Foreground="{StaticResource DefaultTextBrushDark}" 
+                            Text="{Binding Ms.SelectedItem.CutOffMin}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock 
+                            Margin="0 20"
+                            FontSize="14"
+                            Foreground="{StaticResource DefaultTextBrushMedium}" 
+                            Text="FreqCutMin: "
+                            Visibility="{Binding Ms.VisibilityCtrl}"/>
+                    <TextBlock 
+                            Margin="0 18"
+                            FontSize="16"
+                            Foreground="{StaticResource DefaultTextBrushDark}" 
+                            Text="{Binding Ms.SelectedItem.FreqCutMin, StringFormat= {}{0} Hz}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock 
+                            Margin="0 20"
+                            FontSize="14"
+                            Foreground="{StaticResource DefaultTextBrushMedium}" 
+                            Text="FreqCutMax: "
+                            Visibility="{Binding Ms.VisibilityCtrl}"/>
+                    <TextBlock 
+                            Margin="0 18"
+                            FontSize="16"
+                            Foreground="{StaticResource DefaultTextBrushDark}" 
+                            Text="{Binding Ms.SelectedItem.FreqCutMax, StringFormat= {}{0} Hz}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel 
+            Grid.Row="1"
+            Margin="15 0 15 15"
+            Background="{StaticResource DefaultPanelBackgroundAlternateLightBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" 
+                    Margin="20 10"
+                    HorizontalAlignment="Left"
+                    Text="Calculate" 
+                    Foreground="{StaticResource DefaultTextBrushDark}" 
+                    FontSize="22" 
+                    FontWeight="DemiBold"/>
+                <CheckBox Grid.Column="1"
+                    Margin="7,12,0,12" 
+                    HorizontalAlignment="Left"
+                    Width="135" 
+                    Height="25"
+                    IsChecked="{Binding Ms.UseFilter}">
+                    <Label Content="Use filter values"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource DefaultTextBrushMedium}" 
+                        FontSize="12" />
+                </CheckBox>
+                <CheckBox Grid.Column="2"
+                    Margin="20 0" 
+                    HorizontalAlignment="Right"
+                    Width="120" 
+                    Height="25"
+                    IsChecked="{Binding Ms.ShowAllLog}">
+                    <Label Content="Show all logs"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource DefaultTextBrushMedium}" 
+                        FontSize="12" />
+                </CheckBox>
+            </Grid>
+            <Grid Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                    Width="190" 
+                    Height="45" 
+                    x:Name="BntCalculate"
+                    Command="{Binding Ms.ExecAnalyze}">
+                    <StackPanel Orientation="Horizontal">
+                        <Path Data="{StaticResource execute_button}" Fill="{StaticResource DefaultActionButtonBrush1}"/>
+                        <TextBlock Text="Analyze..." Margin="6 0"/>
+                    </StackPanel>
+                </Button>
+                <TextBlock Grid.Column="1"
+                    Text="{Binding Ms.StrBanner}"
+                    FontSize="22"
+                    Padding="5"
+                    Width="200" 
+                    Height="45" 
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Center"
+                    Foreground="{StaticResource DefaultBackgroundLightBrush}"
+                    Background="{Binding Ms.BgCtrolInfo}">
+                </TextBlock>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

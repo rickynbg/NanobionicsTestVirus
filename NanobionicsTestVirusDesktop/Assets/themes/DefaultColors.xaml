@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="DefaultTitleBrush" Color="#6C757D"/>
+    
+    <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="#F7F8F9"/>
+    <SolidColorBrush x:Key="DefaultBackgroundLightBrush" Color="#F2F4F6"/>
+    <SolidColorBrush x:Key="DefaultBackgroundDarkBrush" Color="#495057"/>
+    
+    <SolidColorBrush x:Key="DefaultPanelBackgrounDarkBrush" Color="#6C757D"/>
+    <SolidColorBrush x:Key="DefaultPanelBackgroundLightBrush" Color="#CED4DA"/>
+    <SolidColorBrush x:Key="DefaultPanelBackgroundAlternateLightBrush" Color="#DEE2E6"/>
+
+    <SolidColorBrush x:Key="DefaultBannerIdleBackground" Color="#699ec9"/>
+    <SolidColorBrush x:Key="DefaultBannerOkBackground" Color="#56B383"/>
+    <SolidColorBrush x:Key="DefaultBannerErrorBackground" Color="#B53542"/>
+    <SolidColorBrush x:Key="DefaultBannerExceptBackground" Color="#FF949EA9"/>
+
+    <SolidColorBrush x:Key="DefaultTextBrushLight" Color="#E9ECEF"/>
+    <SolidColorBrush x:Key="DefaultTextBrushMedium" Color="#6C757D"/>
+    <SolidColorBrush x:Key="DefaultTextBrushDark" Color="#343A40"/>
+    
+    <SolidColorBrush x:Key="DefaultTreeViewBrushLight" Color="#E0E3E6"/>
+    
+    <SolidColorBrush x:Key="DefaultCommandButtonBrush" Color="#E9ECEF"/>
+    <SolidColorBrush x:Key="DefaultCommandAlternateButtonBrush" Color="#495057"/>
+    <SolidColorBrush x:Key="DefaultCommandCloseButtonBrush" Color="#825757"/>
+
+    <SolidColorBrush x:Key="DefaultActionButtonForegroundBrush" Color="#CED4DA"/>
+    <SolidColorBrush x:Key="DefaultActionButtonAlternateForegroundBrush" Color="#212529"/>
+    <SolidColorBrush x:Key="DefaultActionButtonBackgroundBrush" Color="#495057"/>
+    <SolidColorBrush x:Key="DefaultActionButtonPressedBackgroundBrush" Color="#E9ECEF"/>
+    <SolidColorBrush x:Key="DefaultActionButtonAlternateBackgroundBrush" Color="#B7BEC5"/>
+    
+    <SolidColorBrush x:Key="DefaultActionButtonBrush1" Color="#91B898"/>
+    <SolidColorBrush x:Key="DefaultActionButtonBrush2" Color="#AF8989"/>
+    <SolidColorBrush x:Key="DefaultActionButtonBrush3" Color="#7295cf"/>
+    
+    <SolidColorBrush x:Key="DefaultBullet1Brush" Color="#ACCAB2"/>
+    <SolidColorBrush x:Key="DefaultBullet2Brush" Color="#DDE0B8"/>
+
+    <Color x:Key="ColorDefaultBackgroundBrush">#FF949EA9</Color>
+    <Color x:Key="ColorDefaultBackgroundAlternateBrush">#FFAAB4Bf</Color>
+    <Color x:Key="ColorDefaultBackgroundBrushPanel">#CED4DA</Color>
+    <Color x:Key="ColorDefaultForegroundBrush">#FFFBFBFC</Color>
+</ResourceDictionary>

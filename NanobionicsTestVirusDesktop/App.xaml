@@ -1,0 +1,20 @@
+﻿<Application x:Class="NanobionicsTestVirusDesktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NanobionicsTestVirusDesktop"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Assets/icons/icons.xaml"/>
+                <ResourceDictionary Source="/Assets/img/images.xaml"/>
+                <ResourceDictionary Source="/Assets/themes/DefaultColors.xaml"/>
+                <ResourceDictionary Source="/Assets/themes/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Assets/themes/CheckBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Assets/themes/TabControlStyle.xaml"/>
+                <ResourceDictionary Source="/Assets/themes/ToolBarTrayStyle.xaml"/>
+                <ResourceDictionary Source="/Assets/themes/TreeViewStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

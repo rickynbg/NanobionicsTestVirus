@@ -1,0 +1,205 @@
+﻿<Window x:Class="NanobionicsTestVirusDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MD="clr-namespace:NanobionicsTestVirusDesktop.Models"
+        xmlns:VM="clr-namespace:NanobionicsTestVirusDesktop.ViewModels"
+        xmlns:views="clr-namespace:NanobionicsTestVirusDesktop.Views"
+        mc:Ignorable="d"
+        x:Name="mainWindow"
+        Title="Nanobionics Test Virus" Height="600" Width="800"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Window.DataContext>
+        <VM:MainViewModel x:Name="DbContext"/>
+    </Window.DataContext>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Grid Background="{StaticResource DefaultBackgroundLightBrush}"
+          Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" 
+              Background="{StaticResource DefaultPanelBackgroundLightBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" 
+                  Background="{StaticResource DefaultBackgroundDarkBrush}">
+                <Image x:Name="MainWindow_Logo" 
+                       Margin="6" 
+                       Source="{StaticResource LogoImage}" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="52"/>
+                </Grid.RowDefinitions>
+                <TreeView 
+                    AlternationCount="2"
+                    x:Name="MeasuresList" 
+                    Grid.Row="0"
+                    ItemsSource="{Binding Ms.FileMeasures}" 
+                    SelectedItemChanged="MeasuresList_SelectedItemChanged">
+                    <TreeView.Resources>
+                        <VM:TagConverter x:Key="TagConverter"/>
+                    </TreeView.Resources>
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate 
+                            DataType="{x:Type MD:FileMeasure}"
+                            ItemsSource="{Binding DataMeasures}">
+                            <TextBlock Text="{Binding Path=Name}" Margin="5" Width="200" />
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <DataTemplate
+                                        DataType="{x:Type MD:DataMeasure}">
+                                    <StackPanel Orientation="Horizontal" Width="180" Margin="5">
+                                        <Border 
+                                            Name="BulletItemMeasure" 
+                                            Background="{Binding Path=., Converter={StaticResource TagConverter}}" 
+                                            Width="12" Height="12"
+                                            BorderBrush="#00000000"
+                                            CornerRadius="2"/>
+                                        <TextBlock Text="{Binding Name}" Margin="5 0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button 
+                        Grid.Column="0"
+                        Margin="8 8 4 8"
+                        x:Name="AddMeasButton"
+                        Command="{Binding Ms.AddTypeCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource database_check_icon}" Fill="{StaticResource DefaultActionButtonBrush1}"/>
+                            <TextBlock Text="Add" Margin="6 0"/>
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Grid.Column="1"
+                        Margin="4 8 8 8"
+                        x:Name="RemoveMeasButton"
+                        Command="{Binding Ms.DeleteTypeCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource database_remove_icon}" Fill="{StaticResource DefaultActionButtonBrush2}"/>
+                            <TextBlock Text="Remove" Margin="6 0"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Top navigations menu-->
+            <Grid Background="{StaticResource DefaultTitleBrush}"
+              Grid.Row="0"
+              MouseDown="BarTitle_MouseDown">
+                <StackPanel Panel.ZIndex="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Margin="0 1 2 1">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="Width" Value="45"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate
+                                    TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <Path 
+                                                Data="{Binding Content, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"
+                                                Fill="{StaticResource DefaultCommandButtonBrush}"
+                                                Height="{TemplateBinding FontSize}"
+                                                Width="{TemplateBinding FontSize}"
+                                                Stretch="Uniform"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource DefaultCommandAlternateButtonBrush}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style x:Key="MaximizeButtonStyle" 
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="Width" Value="45"/>
+                            <Setter Property="Content" Value="{StaticResource maximize_icon}"/>
+                            <Style.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding WindowState, ElementName=mainWindow}" Value="Maximized">
+                                    <Setter Property="Content" Value="{StaticResource restore_icon}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style x:Key="CloseButtonStyle"
+                           TargetType="{x:Type Button}"
+                           BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="Width" Value="45"/>
+                            <Setter Property="Content" Value="{StaticResource close_icon}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource DefaultCommandCloseButtonBrush}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button 
+                        Name="minimizeButton"
+                        Content="{StaticResource minimize_icon}"
+                        Click="MinimizeButton_Click"/>
+                    <Button 
+                        Name="maximizeButton"
+                        Style="{StaticResource MaximizeButtonStyle}"
+                        Click="MaximizeButton_Click"/>
+                    <Button 
+                        Name="closeButton"
+                        Style="{StaticResource CloseButtonStyle}"
+                        Click="CloseButton_Click"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="529*"/>
+                    <ColumnDefinition Width="71*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TabControl Grid.Row="0" Grid.ColumnSpan="2">
+                    <TabItem Header="Analysis">
+                        <views:AnalysisControl/>
+                    </TabItem>
+                    <TabItem Header="Setting">
+                        <views:SettingControl/>
+                    </TabItem>
+                </TabControl>
+                <views:ConsoleControl x:Name="ViewConsole" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
