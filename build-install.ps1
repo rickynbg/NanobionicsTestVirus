@@ -4,6 +4,6 @@
 # $shell.SendKeys("^c")
 
 Start "devenv" "NanobionicsTestVirusInstaller\NanobionicsTestVirusInstaller.vdproj /build Release"
-Start-Sleep -s 60
+Start-Sleep -s 120
 
 Get-Process devenv | Stop-Process -Force

@@ -42,8 +42,8 @@ jobs:
       
     # Installer app
     - name: Build Installer
-      run: devenv $Env:GITHUB_WORKSPACE\NanobionicsTestVirusInstaller\NanobionicsTestVirusInstaller.vdproj /build Release
-      # run: ./build-install.ps1
+      # run: devenv $Env:GITHUB_WORKSPACE\NanobionicsTestVirusInstaller\NanobionicsTestVirusInstaller.vdproj /build Release
+      run: ./build-install.ps1
       
     # Upload artifacts
     - name: Upload Artifact
