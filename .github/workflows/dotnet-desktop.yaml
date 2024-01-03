@@ -63,7 +63,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: bin\Release\NanobionicsTestVirusInstaller.msi
+        file: NanobionicsTestVirus\bin\Release\NanobionicsTestVirusInstaller.msi
         asset_name: NanobionicsTestVirusInstaller-x64.msi
         tag: ${{ github.ref }}
         overwrite: true
